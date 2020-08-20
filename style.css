@@ -17,3 +17,12 @@ i{
     margin-left: 23px;
     margin-top: 23px;
 }
+
+.card:hover{
+    box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.71);
+}
+
+/* .card-title{
+    background-color: salmon;
+    border-radius: 10px;
+} */

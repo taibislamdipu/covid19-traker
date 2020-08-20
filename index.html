@@ -18,12 +18,13 @@
 
         <header>
             <h1>COVID-19 Case In <span id="country-flag"></span></h1>
+            <h4 id="date-today"></h4>
         </header>
 
         <section class="row d-flex justify-content-center">
             <div class="input-group mb-3 col-md-5 col-md-offset-5">
                 <input id="country-name" type="text" class="form-control"
-                    placeholder="Country name. example: Bangladesh">
+                    placeholder="Country name. example: Bangladesh" value="bangladesh">
 
                 <div class="input-group-append">
                     <button class="btn btn-outline-success" type="button" id="search-btn">Search</button>
@@ -121,7 +122,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
 
@@ -129,8 +129,9 @@
 
     <!-- custom script -->
     <script>
-
+        dateToday()
         document.getElementById('search-btn').addEventListener('click', getResult)
+
 
         function getResult() {
             clear();
@@ -163,39 +164,39 @@
                     `;
 
                     activeCase.innerHTML += `
-                    ${data.active}
+                    <span class="bg-primary p-1 text-white rounded">${data.active}</span>
                     `;
 
                     todayCases.innerHTML += `
-                    ${data.todayCases}
+                    <span class="bg-warning p-1 rounded">${data.todayCases}</span>
                     `;
 
                     todayDeath.innerHTML += `
-                    ${data.todayDeaths}
+                    <span class="bg-danger p-1 text-white rounded">${data.todayDeaths}</span>
                     `;
 
                     totalDeath.innerHTML += `
-                    ${data.deaths}
+                    <span class="bg-danger p-1 text-white rounded">${data.deaths}</span>
                     `;
 
                     oneDeathPerPeople.innerHTML += `
-                    ${data.oneDeathPerPeople}
+                    <span class="bg-info p-1 text-white rounded">${data.oneDeathPerPeople}</span>
                     `;
 
                     todayRecovered.innerHTML += `
-                    ${data.todayRecovered}
+                    <span class="bg-success p-1 text-white rounded">${data.todayRecovered}</span>
                     `;
 
                     oneCasePerPeople.innerHTML += `
-                    ${data.oneCasePerPeople}
+                    <span class="bg-info p-1 text-white rounded">${data.oneCasePerPeople}</span>
                     `;
 
                     oneTestPerPeople.innerHTML += `
-                    ${data.oneTestPerPeople}
+                    <span class="bg-info p-1 text-white rounded">${data.oneTestPerPeople}</span>
                     `;
 
                     totalRecovered.innerHTML += `
-                    ${data.recovered}
+                    <span class="bg-success p-1 text-white rounded">${data.recovered}</span>
                     `;
 
 
@@ -216,10 +217,11 @@
         }
 
 
-        function checkEmpty() {
-            if (countryName == '') {
-                console.log('kisu nai');
-            }
+        function dateToday() {
+            let today = new Date()
+            console.log(today);
+
+            document.getElementById('date-today').innerText = today;
         }
 
     </script>
