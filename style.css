@@ -1,0 +1,19 @@
+
+body {
+    background-image: linear-gradient(to bottom right, rgb(201, 238, 226),  rgb(138, 161, 230));
+}
+
+header{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.search-box{
+    text-align: center;
+    margin: 30px;
+}
+
+i{
+    margin-left: 23px;
+    margin-top: 23px;
+}
